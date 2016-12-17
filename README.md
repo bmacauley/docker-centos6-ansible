@@ -1,5 +1,4 @@
 #CentOS 6.x Ansible Test Image
-
 ![Build Status](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 CentOS 6.x Docker container for Ansible playbook and role testing.
