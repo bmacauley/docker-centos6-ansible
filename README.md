@@ -1,10 +1,12 @@
-#CentOS 6.x Ansible Test Image
+CentOS 6.x Ansible Test Image
+=============================
 ![Build Status](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 CentOS 6.x Docker container for Ansible playbook and role testing.
 
 
-##How to Build
+How to Build
+--------------
 This image is built on Docker Hub automatically any time the upstream base OS container is rebuilt, and any time a commit is made or merged to the master branch. But if you need to build the image on your own locally, do the following:
 
 1. Install Docker.
@@ -12,7 +14,8 @@ This image is built on Docker Hub automatically any time the upstream base OS co
 3. Run `docker build -t centos6-ansible`
 
 
-##How to use
+How to use
+------------
 1. Install Docker
 2. Pull this image from Docker Hub: docker pull bmacauley/docker-centos6-ansible:latest (or use the tag  built earlier, e.g. centos6-ansible)
 3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro bmacauley/docker-centos6-ansible:latest /usr/lib/systemd/systemd` (to test  Ansible roles,  add in a volume mounted from the current working directory with `--volume=`pwd`:/etc/ansible/roles/role_under_test:ro)`.
@@ -20,7 +23,8 @@ This image is built on Docker Hub automatically any time the upstream base OS co
 a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
 b. `docker exec --tty [container_id] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml --syntax-check`
 
-##Author
+Author
+------
 Brian Macauley
 
 Heavily based on  [geerlingguy/docker-centos6-ansible](https://github.com/geerlingguy/docker-centos6-ansible)
